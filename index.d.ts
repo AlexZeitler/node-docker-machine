@@ -19,7 +19,10 @@ export declare class Machine {
     static start(name: string, done: (err?: Error) => void): void;
     static stop(name: string, done: (err?: Error) => void): void;
     static kill(name: string, done: (err?: Error) => void): void;
-    static env(name: string, opts: any, done: any): void;
+    static env(name: string, opts?: {
+        shell?: string;
+        parse?: boolean;
+    }, done?: (err?: Error, env?: object) => void): void;
     static ssh(name: string, cmd: any, done: any): void;
     static inspect(name: string, done: any): void;
     static list(opts: any, done: any): void;
