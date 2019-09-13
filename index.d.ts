@@ -1,3 +1,4 @@
+export declare type MachineState = 'running';
 export declare class Machine {
     name: string;
     responseTime: number;
@@ -11,7 +12,7 @@ export declare class Machine {
     }): {};
     static command(args: any, done: any): void;
     static status(name: string, done: (err?: Error, status?: string) => void): void;
-    static isRunning(name: string, done: any): void;
+    static isRunning(name: string, done: (err?: Error, status?: boolean) => void): void;
     static create(name: string, driver: any, options: any, done: any): void;
     static start(name: string, done: any): void;
     static stop(name: string, done: any): void;
