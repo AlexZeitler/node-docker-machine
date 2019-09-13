@@ -1,5 +1,8 @@
 export declare type MachineState = 'running';
 export declare type Driver = 'amazonec' | 'azure' | 'digitalocean' | 'exoscale' | 'g5k' | 'google' | 'hetzner' | 'hyperv' | 'linode' | 'openstack' | 'rackspace' | 'scaleway' | 'softlayer' | 'virtualbox' | 'vmwarefusion' | 'vmwarevcloudair' | 'vmwarevsphere' | 'vmwareworkstation' | 'vmwareworkstation' | '';
+export declare type Options = string | {
+    name?: string;
+};
 export declare class Machine {
     name: string;
     responseTime: number;
@@ -7,10 +10,8 @@ export declare class Machine {
     activeHost: boolean;
     activeSwarm: boolean;
     dockerVersion: string;
-    constructor(opts: any);
-    static options(opts: string | {
-        name: string;
-    }): {};
+    constructor(opts?: Options);
+    static options(opts?: Options): Options;
     static command(args: any, done: any): void;
     static status(name: string, done: (err?: Error, status?: string) => void): void;
     static isRunning(name: string, done: (err?: Error, status?: boolean) => void): void;
