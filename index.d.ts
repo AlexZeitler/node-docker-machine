@@ -18,7 +18,7 @@ export declare class Machine {
     static create(name: string, driver: Driver, options?: any, done?: (err?: Error) => void): void;
     static start(name: string, done: (err?: Error) => void): void;
     static stop(name: string, done: (err?: Error) => void): void;
-    static kill(name: string, done: any): void;
+    static kill(name: string, done: (err?: Error) => void): void;
     static env(name: string, opts: any, done: any): void;
     static ssh(name: string, cmd: any, done: any): void;
     static inspect(name: string, done: any): void;
