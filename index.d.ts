@@ -22,11 +22,11 @@ export declare class Machine {
     static env(name: string, opts?: {
         shell?: string;
         parse?: boolean;
-    }, done?: (err?: Error, env?: object) => void): void;
+    }, done?: (err?: Error, env?: any) => void): void;
     static ssh(name: string, cmd: string, done: (err?: Error) => void): void;
-    static inspect(name: string, done: (err?: Error, data?: object) => void): void;
+    static inspect(name: string, done: (err?: Error, data?: any) => void): void;
     static list(opts: {
         timeout?: number;
         inspect?: boolean;
-    }, done: (err?: Error, machines?: object[]) => void): void;
+    }, done: (err?: Error, machines?: any[]) => void): void;
 }
