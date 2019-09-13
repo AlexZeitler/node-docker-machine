@@ -10,7 +10,7 @@ export declare class Machine {
         name: string;
     }): {};
     static command(args: any, done: any): void;
-    static status(name: string, done: any): void;
+    static status(name: string, done: (err?: Error, status?: string) => void): void;
     static isRunning(name: string, done: any): void;
     static create(name: string, driver: any, options: any, done: any): void;
     static start(name: string, done: any): void;
