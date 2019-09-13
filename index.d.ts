@@ -25,5 +25,8 @@ export declare class Machine {
     }, done?: (err?: Error, env?: object) => void): void;
     static ssh(name: string, cmd: string, done: (err?: Error) => void): void;
     static inspect(name: string, done: (err?: Error, data?: object) => void): void;
-    static list(opts: any, done: any): void;
+    static list(opts: {
+        timeout?: number;
+        inspect?: boolean;
+    }, done: (err?: Error, machines?: object[]) => void): void;
 }
