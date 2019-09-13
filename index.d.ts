@@ -1,4 +1,5 @@
 export declare type MachineState = 'running';
+export declare type Driver = 'amazonec' | 'azure' | 'digitalocean' | 'exoscale' | 'g5k' | 'google' | 'hetzner' | 'hyperv' | 'linode' | 'openstack' | 'rackspace' | 'scaleway' | 'softlayer' | 'virtualbox' | 'vmwarefusion' | 'vmwarevcloudair' | 'vmwarevsphere' | 'vmwareworkstation' | 'vmwareworkstation' | '';
 export declare class Machine {
     name: string;
     responseTime: number;
@@ -13,7 +14,7 @@ export declare class Machine {
     static command(args: any, done: any): void;
     static status(name: string, done: (err?: Error, status?: string) => void): void;
     static isRunning(name: string, done: (err?: Error, status?: boolean) => void): void;
-    static create(name: string, driver: any, options: any, done: any): void;
+    static create(name: string, driver: Driver, options?: any, done?: (err?: Error) => void): void;
     static start(name: string, done: any): void;
     static stop(name: string, done: any): void;
     static kill(name: string, done: any): void;
