@@ -23,7 +23,7 @@ export declare class Machine {
         shell?: string;
         parse?: boolean;
     }, done?: (err?: Error, env?: object) => void): void;
-    static ssh(name: string, cmd: any, done: any): void;
+    static ssh(name: string, cmd: string, done: (err?: Error) => void): void;
     static inspect(name: string, done: any): void;
     static list(opts: any, done: any): void;
 }
