@@ -16,7 +16,7 @@ export declare class Machine {
     static status(name: string, done: (err?: Error, status?: string) => void): void;
     static isRunning(name: string, done: (err?: Error, status?: boolean) => void): void;
     static create(name: string, driver: Driver, options?: any, done?: (err?: Error) => void): void;
-    static start(name: string, done: any): void;
+    static start(name: string, done: (err?: Error) => void): void;
     static stop(name: string, done: any): void;
     static kill(name: string, done: any): void;
     static env(name: string, opts: any, done: any): void;
