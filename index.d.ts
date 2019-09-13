@@ -6,7 +6,9 @@ export declare class Machine {
     activeSwarm: boolean;
     dockerVersion: string;
     constructor(opts: any);
-    static options(opts: any): any;
+    static options(opts: string | {
+        name: string;
+    }): {};
     static command(args: any, done: any): void;
     static status(name: string, done: any): void;
     static isRunning(name: string, done: any): void;
